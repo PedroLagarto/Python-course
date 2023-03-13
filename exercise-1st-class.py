@@ -1,57 +1,50 @@
 import unittest
 
-def sufix_adder(prefix):
-    if prefix == 'J':
-        return 'Jack'
-    elif prefix == 'K':
-        return 'Kack'
-    elif prefix == 'L':
-        return 'Lack'
-    elif prefix == 'M':
-        return 'Mack'
-    elif prefix == 'N':
-        return 'Nack'
-    elif prefix == 'O':
-        return 'Ouack'
-    elif prefix == 'P':
-        return 'Pack'
-    elif prefix == 'Q':
-        return 'Quack'
-    else:
+def suffix_adder_for_duck_names(prefix):
+    valid_inputs = ["J", "K", "L", "M", "N", "O", "P", "Q"]
+
+    if prefix == "O" or prefix == "Q":
+        suffix = "uack"
+        return prefix + suffix
+    elif prefix in valid_inputs:
+        suffix = "ack"
+        return prefix + suffix
+    else: 
         return 'Not a valid input.'
+
 
 class Test_suffix_adder(unittest.TestCase):
     def test_jack(self):
         print('Testing Jack')
-        self.assertEqual(sufix_adder('J'), 'Jack')
+        self.assertEqual(suffix_adder_for_duck_names('J'), 'Jack')
 
     def test_kack(self):
         print('Testing Kack')
-        self.assertEqual(sufix_adder('K'), 'Kack')
+        self.assertEqual(suffix_adder_for_duck_names('K'), 'Kack')
 
     def test_lack(self):
         print('Testing Lack')
-        self.assertEqual(sufix_adder('L'), 'Lack')
+        self.assertEqual(suffix_adder_for_duck_names('L'), 'Lack')
 
     def test_mack(self):
         print('Testing Mack')
-        self.assertEqual(sufix_adder('M'), 'Mack')
+        self.assertEqual(suffix_adder_for_duck_names('M'), 'Mack')
 
     def test_nack(self):
         print('Testing Nack')
-        self.assertEqual(sufix_adder('N'), 'Nack')
+        self.assertEqual(suffix_adder_for_duck_names('N'), 'Nack')
 
     def test_ouack(self):
         print('Testing Ouack')
-        self.assertEqual(sufix_adder('O'), 'Ouack')
+        self.assertEqual(suffix_adder_for_duck_names('O'), 'Ouack')
 
     def test_pack(self):
         print('Testing Pack')
-        self.assertEqual(sufix_adder('P'), 'Pack')
+        self.assertEqual(suffix_adder_for_duck_names('P'), 'Pack')
 
     def test_quack(self):
         print('Testing Quack')
-        self.assertEqual(sufix_adder('Q'), 'Quack') 
+        self.assertEqual(suffix_adder_for_duck_names('Q'), 'Quack') 
 
 
 test = Test_suffix_adder()
